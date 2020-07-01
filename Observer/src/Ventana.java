@@ -3,6 +3,7 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
@@ -12,6 +13,7 @@ import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
@@ -26,16 +28,25 @@ public class Ventana {
 	private ImageView imgtwt;
 	private ImageView imgytb;
 	private ImageView imgig;
-	
+	private Label l;
+	private HBox titb;
+	private VBox vpanel;
 	
 	
 	 public Ventana(Stage pstage){
 	        root =new VBox();
+	        l = new Label("REDES SOCIALES");
 	        btnfb = new Button("Facebook");
+	        btnfb.setTextFill(Color.web("#0000ff"));
 	        btnytb = new Button("Youtube");
+	        btnytb.setTextFill(Color.web("#ff0000"));
 	        btntwt = new Button("Twitter");
+	        btntwt.setTextFill(Color.web("#0076a3"));
 	        btnig = new Button("Instagram");
+	        btnig.setTextFill(Color.web("#990099"));
 	        hpanel = new HBox();
+	        vpanel = new VBox();
+	        titb = new HBox();
 	        imgfb = new ImageView(new Image("/recursos/facebook.png"));
 	        imgtwt = new ImageView(new Image("/recursos/twitter.png"));
 	        imgytb = new ImageView(new Image("/recursos/youtube.png"));
@@ -68,7 +79,17 @@ public class Ventana {
 		
 	}
 	
+	private void organizarTitulo() {
+		
+		l.setStyle(" -fx-font: 100px Tahoma;" +
+                "    -fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 0%, red 70%);" +
+                "    -fx-stroke: black;" +
+                "    -fx-stroke-width: 1;");
+        titb.getChildren().add(l);
+	}
+	
 	public void organizarElementos() {
+		organizarTitulo();
 		VBox recfb = new VBox(); 
 		VBox recyt = new VBox(); 
 		VBox rectw = new VBox(); 
@@ -77,11 +98,23 @@ public class Ventana {
 		recyt.getChildren().addAll(imgytb, btnytb);
 		rectw.getChildren().addAll(imgtwt, btntwt);
 		recig.getChildren().addAll(imgig, btnig);
-
+		
+		recfb.setAlignment(Pos.CENTER);
+		rectw.setAlignment(Pos.CENTER);
+		recyt.setAlignment(Pos.CENTER);
+		recig.setAlignment(Pos.CENTER);
+		
+		
 		
 		hpanel.getChildren().addAll(recfb, recyt, rectw, recig );
 		hpanel.setSpacing(40);
-		root.getChildren().addAll(hpanel);
+		
+		vpanel.getChildren().add(hpanel);
+			hpanel.setAlignment(Pos.CENTER);
+		
+		root.getChildren().addAll(titb, vpanel);
+	       titb.setAlignment(Pos.CENTER);
+	       vpanel.setAlignment(Pos.CENTER);
 		
 		formatearTamanio(imgfb);
 		formatearTamanio(imgtwt);
