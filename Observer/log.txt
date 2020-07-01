@@ -1,2 +1,6 @@
 Ha ingresado a: Twitter   fecha: Tue Jun 30 22:16:47 COT 2020
 Ha ingresado a: Facebook   fecha: Tue Jun 30 22:27:35 COT 2020
+Ha ingresado a: Facebook   fecha: Tue Jun 30 23:13:20 COT 2020
+Ha ingresado a: Youtube   fecha: Tue Jun 30 23:13:20 COT 2020
+Ha ingresado a: Twitter   fecha: Tue Jun 30 23:13:20 COT 2020
+Ha ingresado a: Instagram   fecha: Tue Jun 30 23:13:20 COT 2020
