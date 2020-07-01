@@ -60,20 +60,20 @@ public class Ventana {
 	public void setActions() {
 		btnfb.setOnAction(e-> {
 			cambiarColorVentana(btnfb.getText());
-		    enlace("www.facebook.com");
+		    Opener.enlace("www.facebook.com");
 		
 		});
 		btnytb.setOnAction(e->{ 
 			cambiarColorVentana(btnytb.getText());
-			enlace("www.youtube.com");
+			Opener.enlace("www.youtube.com");
 			});
 		btntwt.setOnAction(e-> { 
 			cambiarColorVentana(btntwt.getText());
-			enlace("www.twitter.com");
+			Opener.enlace("www.twitter.com");
 			});
 		btnig.setOnAction(e->{ 
 			cambiarColorVentana(btnig.getText());
-			enlace("www.instagram.com");
+			Opener.enlace("www.instagram.com");
 			});
 		
 		
@@ -138,14 +138,7 @@ public class Ventana {
 			root.setBackground(new Background(new BackgroundFill(Color.SKYBLUE, null, null)));
 		
 	}
-	public void enlace(String enlaceAAceder) {
-	    Desktop enlace = Desktop.getDesktop();
-	    try {
-	        enlace.browse(new URI(enlaceAAceder));
-	    } catch (IOException | URISyntaxException e) {
-	        System.out.println("Error");
-	    }
-	}
+	
 	public Scene getSceneInicio(){
 	        Scene escenaInicio=new Scene(getRoot(),900, 500);
 	        return escenaInicio;
